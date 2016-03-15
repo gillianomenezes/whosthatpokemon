@@ -9,7 +9,6 @@ function changeImage(){
 	//document.getElementById("img_pokemon").src = "https://www.pokedit.com/images/pokemon-sprites/6/" + numberText + ".gif";
 	//document.getElementById("img_pokemon").src = "http://www.pokestadium.com/assets/img/sprites/official-art/dream-world/" + pokemon[number - 1].toLowerCase() + ".png";
 	document.getElementById("img_pokemon").src = "http://pldh.net/media/dreamworld/" + numberText + ".png";
-	
 }
 
 function zeroFill( number, width )
