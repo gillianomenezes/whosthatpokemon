@@ -1,0 +1,33 @@
+#div_screen
+{	
+	
+}
+
+.starclass
+{		
+	width: 400px;
+	height: 400px;
+	
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -200px;
+}
+
+#div_pokemon
+{	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -100px;	
+}
+
+#img_pokemon
+{
+	width: 200px;
+	height: 200px;
+	
+	-webkit-filter: brightness(0%);
+}
