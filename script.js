@@ -25,8 +25,11 @@ function zeroFill( number, width )
 function valueKeyPressed() {
     var edValue = document.getElementById("inputName");
     var inputNameValue = edValue.value.toLowerCase();
+    var pokemonName = pokemon[number-1];
+              
+    pokemonName = pokemonName.toLowerCase();                
             
-    if(inputNameValue == pokemon[number-1].toLowerCase())
+    if(inputNameValue == pokemonName)
     {
         alert("acertô, miserávi!!!");          
     }    
