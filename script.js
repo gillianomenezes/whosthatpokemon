@@ -1,8 +1,9 @@
 // JavaScript Document
 var number;
+var correctAnswers = 0;
 
 function changeImage(){
-	number =  Math.floor((Math.random() * 720) + 1);
+	number =  Math.floor((Math.random() * 151) + 1);
 	numberText = zeroFill(number, 3);
 	//alert(numberText + "  " + pokemon[number - 1]);
 	//document.getElementById("img_pokemon").src = "http://cdn.bulbagarden.net/upload/3/3d/" + numberText + pokemon[number - 1] + ".png";
@@ -31,8 +32,53 @@ function valueKeyPressed() {
             
     if(inputNameValue == pokemonName)
     {
-        alert("acertô, miserávi!!!");          
+        changeImage();
+        edValue.value = "";    
+        correctAnswers += 1;     
+        var displayCorrectAnswers = document.getElementById('PokemonsNamedAmount');
+        displayCorrectAnswers.textContent = correctAnswers;
     }    
 }
+
+function noIdeaWhatIsThisPokemon()
+{
+    changeImage();
+    var edValue = document.getElementById("inputName");
+    edValue.value = "";
+}
+
+function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds;
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds; 
+
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            // example 05:00 not 04:59
+            start = Date.now() + 1000;
+        }
+        
+    };
+}
+
+window.onload = function () {
+    var timeInterval = 60,
+        display = document.querySelector('#time');
+    startTimer(timeInterval, display);
+};
 
 var pokemon = ["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","Charizard","Squirtle","Wartortle","Blastoise","Caterpie","Metapod","Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew","Sandslash","Nidoran?","Nidorina","Nidoqueen","Nidoran?","Nidorino","Nidoking","Clefairy","Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat","Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck","Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra","Alakazam","Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude","Graveler","Golem","Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd","Doduo","Dodrio","Seel","Dewgong","Grimer","Muk","Shellder","Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr. Mime","Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte","Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo","Mew"];

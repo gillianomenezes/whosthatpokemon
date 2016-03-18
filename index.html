@@ -12,10 +12,15 @@
     	<div>
         	<img class="starclass" src="star1.png"/>
             <img class="starclass" src="star2.png"/>
+            <div>Time left:  <span id="time"></span> </div>
+            <div>Correct answers:  <span id="PokemonsNamedAmount"></span> </div>
+            
             <div id="div_pokemon">
                 <img id="img_pokemon" />
-                <input type="text" id="inputName" onkeypress="valueKeyPressed()" onkeyup="valueKeyPressed()"> 
+                <input type="text" id="inputName" onkeyup="valueKeyPressed()"> 
+                <button type="button" id="changePokemonImage" onclick="noIdeaWhatIsThisPokemon()">I have no idea!</button>
             </div>
+            <div id="fb-root"></div>
         </div>
     </div>
 </body>
