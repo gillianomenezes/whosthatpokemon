@@ -1,33 +1,87 @@
-#div_screen
-{	
-	
-}
-
 .starclass
 {		
-	width: 400px;
-	height: 400px;
+	width: 500px;
+	height: 500px;
 	
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	margin-top: -200px;
-	margin-left: -200px;
+	margin-top: -250px;
+	margin-left: -250px;
 }
 
-#div_pokemon
-{	
-	position: absolute;
+#div_pokemon_content
+{
+    /*background-color: #0000FF;*/
+     
+    font-family: Arial;
+    font-size: 20pt;
+    font-weight: bold;
+    color: #FFFF00;
+    text-align: center;
+    
+    width: 500px;
+    height: 600px;
+    
+	position: absolute;    
 	top: 50%;
 	left: 50%;
-	margin-top: -100px;
-	margin-left: -100px;	
+	margin-top: -300px;
+	margin-left: -250px;    
+}
+
+#div_pokemon_image
+{    	
+    /*background-color: #FF0000;*/
+    
+    width: 100%;
 }
 
 #img_pokemon
-{
-	width: 200px;
-	height: 200px;
+{    
+    max-width:100%;
+    max-height:100%;    
 	
 	-webkit-filter: brightness(0%);
+}
+
+#div_input
+{ 
+    /*background-color: #00FF00;*/
+    width: 100%;
+  
+    position: absolute;
+    bottom: 0;
+}
+
+#inputName
+{
+    font-family: Verdana;
+    font-size: 20pt;
+    text-align: center;
+    
+    border: solid 1px #dcdcdc;
+    opacity: 0.8;
+    
+    padding: 10px;
+
+    transition: box-shadow 0.3s, border 0.3s;
+    box-shadow: 0 0 5px 1px #000000;
+}
+
+#inputName:focus
+{
+  box-shadow: 0 0 5px 1px #FFFF00;    
+}
+
+#skipButton
+{   
+    font-size: 110%;
+    color: white;
+    border-style: none;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(223, 117, 20); /* this is an orange */
+    
+    padding: 10px;
 }
