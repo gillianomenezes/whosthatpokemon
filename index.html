@@ -1,3 +1,80 @@
+<<<<<<< HEAD
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script language="JavaScript" type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Who's that pokemon</title>
+</head>
+
+<body onload="changeImage()" bgcolor="#C1001F">   
+<!--    <div class="counter">
+        <div>Time left:  <span id="time"></span> </div>
+        <div>Correct answers:  <span id="PokemonsNamedAmount"></span> </div> 
+    </div>-->
+    
+	<div class="div_screen">
+            <div id="center">  
+                <!-- Background Images -->
+            	<img class="star_image" src="images/star1.png"/>
+                <img class="star_image" src="images/star2.png"/>
+                
+                
+                <div id="div_game">
+                    
+                    <!-- Title -->
+                    <div id="div_title">WHO IS THAT POKÉMON?</div>    
+                    
+                    <!-- Pokemon Image -->            
+                    <div id="div_pokemon_image">
+                        <img id="img_pokemon" />
+                        <div id="div_close_sign">Close!</div>
+                        <div id="div_pokemon_name" />
+                    </div>          
+                           
+                    <!-- Guess Input -->  
+                    <div id="div_input">
+                        <input type="text" id="inputName" onkeyup="pokemonNameTextChanged()"> 
+                        <button type="button" id="skipButton" onclick="noIdeaWhatIsThisPokemon()">skip</button>
+                    </div>
+                    
+                    <!-- Already Guessed Bar -->
+                    <div id="div_guessed_bar">
+                        <div id="div_guessed_counter">0</div>
+                        
+                        <div id="div_guessed_icons">
+                            <ul id="list_images">
+                                <!--
+                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
+                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
+                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
+                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
+                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
+                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
+                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
+                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
+                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
+                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
+                                -->
+                            </ul>
+                        </div>
+                        
+                        <div id="div_guessed_timer">00:00</div>
+                    </div>
+                    
+                    <!-- Credits -->
+                    <div id="div_credits">
+                        Pokémon and all respective names are trademark & copyright of Nintendo.</br>
+                        Images from <a href="http://pokemon.com">pokemon.com</a> and <a href="http://pkparaiso.com">pkparaiso.com</a>.
+                    </div>
+                </div>
+            </div>          
+    </div>
+</body>
+</html>
+=======
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -34,3 +111,4 @@
     </div>
 </body>
 </html>
+>>>>>>> origin/master
