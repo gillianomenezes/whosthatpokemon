@@ -1,36 +1,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="script.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title>Untitled Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script language="JavaScript" type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Who's that pokemon</title>
 </head>
 
-<body onload="changeImage()" bgcolor="#C1001F">
-	<div id="div_screen">
-    	<div>
-        	<img class="starclass" src="star1.png"/>
-            <img class="starclass" src="star2.png"/>
-            <div>Time left:  <span id="time"></span> </div>
-            <div>Correct answers:  <span id="PokemonsNamedAmount"></span> </div>
-            
-            <div id="div_pokemon_content">
-                <div id="div_title">Who's that Pokémon?</div>
-                
-                <div id="div_pokemon_image">
-                    <img id="img_pokemon" />
-                </div>
-                
-                <div id="div_input">
-                    <input type="text" id="inputName" onkeyup="pokemonNameTextChanged()"> 
-                    <button type="button" id="skipButton" onclick="noIdeaWhatIsThisPokemon()">skip</button>
+<body onload="changeImage()" bgcolor="#C1001F">   
+    <div class="counter">
+        <div>Time left:  <span id="time"></span> </div>
+        <div>Correct answers:  <span id="PokemonsNamedAmount"></span> </div>
+    </div>
+    
+	<div class="div_screen">
+            <div class="pokeball" id="left"></div> 
+            <div id="center">  
+            	<img class="starclass" src="star1.png"/>
+                <img class="starclass" src="star2.png"/>
+                <div id="div_pokemon_content">
+                    <div class="div_title">Who is that Pokémon?</div>                
+                    <div id="div_pokemon_image">
+                        <img id="img_pokemon" />
+                    </div>                 
+                    <div id="div_input">
+                        <input type="text" id="inputName" onkeyup="pokemonNameTextChanged()"> 
+                        <button type="button" id="skipButton" onclick="noIdeaWhatIsThisPokemon()">skip</button>
+                    </div>
                 </div>
             </div>
-            
-            <div id="fb-root"></div>
-
-        </div>
+            <div class="pokeball" id="right"></div>            
     </div>
 </body>
 </html>
