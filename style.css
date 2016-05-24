@@ -1,157 +1,4 @@
-<<<<<<< HEAD
-.starclass
-{		
-	width: 500px;
-	height: 500px;
-	
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-top: -250px;
-	margin-left: -250px;
-}
-
-.div_screen{
-    display: left;
-}
-
-.counter
-{
-    color: #FFFF00;
-    font-size: 20px;
-}
-
-#div_pokemon_content
-{
-    /*background-color: #0000FF;*/
-     
-    font-family: Arial;
-    font-size: 20pt;
-    font-weight: bold;
-    color: #FFFF00;
-    text-align: center;
-    
-    width: 500px;
-    height: 600px;
-    
-	position: absolute;    
-	top: 50%;
-	left: 50%;
-	margin-top: -300px;
-	margin-left: -250px;    
-}
-
-
-
-#div_pokemon_image
-{    	
-    /*background-color: #FF0000;*/
-    
-    width: 100%;
-}
-
-#img_pokemon
-{    
-    max-width:100%;
-    max-height:100%;    
-	
-	-webkit-filter: brightness(0%);
-}
-
-#div_input
-{ 
-    /*background-color: #00FF00;*/
-    width: 100%;
-  
-    position: absolute;
-    bottom: 0;
-}
-
-#inputName
-{
-    font-family: Verdana;
-    font-size: 20pt;
-    text-align: center;
-    
-    border: solid 1px #dcdcdc;
-    opacity: 0.8;
-    
-    padding: 10px;
-
-    transition: box-shadow 0.3s, border 0.3s;
-    box-shadow: 0 0 5px 1px #000000;
-}
-
-#inputName:focus
-{
-  box-shadow: 0 0 5px 1px #FFFF00;    
-}
-
-#skipButton
-{   
-    font-size: 110%;
-    color: white;
-    border-style: none;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background: rgb(223, 117, 20); /* this is an orange */
-    
-    padding: 10px;
-}
-
-.pokeball{
-	width: 200px;
-	height: 200px;
-	display:inline-block;
-	margin:20px;
-	position: relative;
-	border: 6px solid #ccc;
-	border-radius: 50%;
-    vertical-align:middle;
-	background-image: -moz-radial-gradient(40% 40%,circle,rgba(0,0,0,.1) 40%,rgba(0,0,0,1) 100%), -moz-linear-gradient(-90deg, #f33 45%, #333 45%, #3f3f3f 50%, #333 55%, #FFF 55%);
-	background-image: -webkit-radial-gradient(40% 40%,circle,rgba(0,0,0,.1) 40%,rgba(0,0,0,1) 100%),-webkit-linear-gradient(-90deg, #f33 45%, #333 45%, #3f3f3f 50%, #333 55%, #FFF 55%);
-}
-
-.pokeball:before{
-	content: "";
-	display: block;
-	position: absolute;
-	z-index: 6;
-	width: 20%;	
-	height: 20%;
-	background-color: #FFF;
-	border-radius: 50%;
-	box-shadow: 0 0 0 1px #AAA, 0 0 0 10px #fff, 0 0 0 16px #3f3f3f;
-	margin: 40%;
-}
-
-.pokeball:after{
-	content: "";
-	display: block;
-	position: absolute;
-	z-index: 1;
-	width: 94%;
-	height: 10%;
-	background-color:rgba(0,0,0,0);
-	margin: 45% 3%;
-	box-shadow: 12px 0 0 #FFF, -12px 0 0 #FFF;
-}
-
-#left{float:left;vertical-align: middle;display: table-cell;}
-#right{float:right;vertical-align: middle;display: table-cell;}
-#center{margin:0 auto;width:100px;}
-
-.pokeball:hover{ -webkit-animation:shak .3s infinite; -moz-animation:shak .3s infinite;}
-@-webkit-keyframes shak{
-	0%,100%{ -webkit-transform:rotate(-10deg);}
-	50%{-webkit-transform:rotate(10deg);}
-}
-@-moz-keyframes shak{
-	0%,100%{ -moz-transform:rotate(-10deg);}
-	50%{-moz-transform:rotate(10deg);}
-=======
-<<<<<<< HEAD
-.star_image
+.star_image_animated_clockwise
 {		
 	width: 1000px;
 	height: 1000px;
@@ -160,10 +7,25 @@
 	top: 50%;
 	left: 50%;
 	
-    -webkit-animation-name:             rotate; 
-    -webkit-animation-duration:         60s; 
+    -webkit-animation-name:             rotate_clockwise;
+    -webkit-animation-duration:         30s; 
     -webkit-animation-iteration-count:  infinite;
-    -webkit-animation-timing-function: linear; 
+    -webkit-animation-timing-function: linear;
+}
+
+.star_image_animated_counter_clockwise
+{		
+	width: 1000px;
+	height: 1000px;
+	
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	
+    -webkit-animation-name:             rotate_counter_clockwise;
+    -webkit-animation-duration:         30s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
 }
 
 .counter
@@ -208,7 +70,7 @@
     position: relative;
     
     display: inline-block;  
-    width: 50%;
+    width: 75%;
 }
 
 #img_pokemon
@@ -216,6 +78,8 @@
     max-width:100%;
     max-height:100%;    
 	
+	width: 50%	
+
 	-webkit-filter: brightness(0%);
     
     user-drag: none; 
@@ -285,6 +149,7 @@
     opacity: 0.8;
     
     height: 50px;
+    width: 70%;
 
     transition: box-shadow 0.3s, border 0.3s;
     box-shadow: 0 0 5px 1px #000000;
@@ -420,7 +285,7 @@
     width: 100%;
 }
 
-@-webkit-keyframes rotate 
+@-webkit-keyframes rotate_clockwise 
 {
   from
   {
@@ -430,93 +295,16 @@
   {
 	  transform: translate(-50%, -50%) rotate(360deg);
   }
-=======
-.starclass
-{		
-	width: 500px;
-	height: 500px;
-	
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-top: -250px;
-	margin-left: -250px;
 }
 
-#div_pokemon_content
+@-webkit-keyframes rotate_counter_clockwise 
 {
-    /*background-color: #0000FF;*/
-     
-    font-family: Arial;
-    font-size: 20pt;
-    font-weight: bold;
-    color: #FFFF00;
-    text-align: center;
-    
-    width: 500px;
-    height: 600px;
-    
-	position: absolute;    
-	top: 50%;
-	left: 50%;
-	margin-top: -300px;
-	margin-left: -250px;    
-}
-
-#div_pokemon_image
-{    	
-    /*background-color: #FF0000;*/
-    
-    width: 100%;
-}
-
-#img_pokemon
-{    
-    max-width:100%;
-    max-height:100%;    
-	
-	-webkit-filter: brightness(0%);
-}
-
-#div_input
-{ 
-    /*background-color: #00FF00;*/
-    width: 100%;
-  
-    position: absolute;
-    bottom: 0;
-}
-
-#inputName
-{
-    font-family: Verdana;
-    font-size: 20pt;
-    text-align: center;
-    
-    border: solid 1px #dcdcdc;
-    opacity: 0.8;
-    
-    padding: 10px;
-
-    transition: box-shadow 0.3s, border 0.3s;
-    box-shadow: 0 0 5px 1px #000000;
-}
-
-#inputName:focus
-{
-  box-shadow: 0 0 5px 1px #FFFF00;    
-}
-
-#skipButton
-{   
-    font-size: 110%;
-    color: white;
-    border-style: none;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background: rgb(223, 117, 20); /* this is an orange */
-    
-    padding: 10px;
->>>>>>> origin/master
->>>>>>> origin/master
+  from
+  {
+	  transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to
+  {
+	  transform: translate(-50%, -50%) rotate(0deg);
+  }
 }

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,54 +10,12 @@
 </head>
 
 <body onload="changeImage()" bgcolor="#C1001F">   
-    <div class="counter">
-        <div>Time left:  <span id="time"></span> </div>
-        <div>Correct answers:  <span id="PokemonsNamedAmount"></span> </div>
-    </div>
-    
-	<div class="div_screen">
-            <div class="pokeball" id="left"></div> 
-            <div id="center">  
-            	<img class="starclass" src="star1.png"/>
-                <img class="starclass" src="star2.png"/>
-                <div id="div_pokemon_content">
-                    <div class="div_title">Who is that Pokémon?</div>                
-                    <div id="div_pokemon_image">
-                        <img id="img_pokemon" />
-                    </div>                 
-                    <div id="div_input">
-                        <input type="text" id="inputName" onkeyup="pokemonNameTextChanged()"> 
-                        <button type="button" id="skipButton" onclick="noIdeaWhatIsThisPokemon()">skip</button>
-                    </div>
-                </div>
-            </div>
-            <div class="pokeball" id="right"></div>            
-    </div>
-</body>
-</html>
-=======
-<<<<<<< HEAD
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script language="JavaScript" type="text/javascript" src="script.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Who's that pokemon</title>
-</head>
-
-<body onload="changeImage()" bgcolor="#C1001F">   
-<!--    <div class="counter">
-        <div>Time left:  <span id="time"></span> </div>
-        <div>Correct answers:  <span id="PokemonsNamedAmount"></span> </div> 
-    </div>-->
     
 	<div class="div_screen">
             <div id="center">  
                 <!-- Background Images -->
-            	<img class="star_image" src="images/star1.png"/>
-                <img class="star_image" src="images/star2.png"/>
+            	<img id="star1" class="star_image_animated_clockwise" src="images/star1.png"/>
+                <img id="star2" class="star_image_animated_clockwise" src="images/star2.png"/>
                 
                 
                 <div id="div_game">
@@ -84,18 +42,6 @@
                         
                         <div id="div_guessed_icons">
                             <ul id="list_images">
-                                <!--
-                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
-                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
-                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
-                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
-                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
-                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
-                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
-                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
-                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
-                                <li><img src="http://www.pkparaiso.com/imagenes/shuffle/sprites/001.png" height="50px" /></li>
-                                -->
                             </ul>
                         </div>
                         
@@ -110,44 +56,13 @@
                 </div>
             </div>          
     </div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-78230855-1', 'auto');
+      ga('send', 'pageview');
+    </script>
 </body>
 </html>
-=======
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="script.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title>Untitled Document</title>
-</head>
-
-<body onload="changeImage()" bgcolor="#C1001F">
-	<div id="div_screen">
-    	<div>
-        	<img class="starclass" src="star1.png"/>
-            <img class="starclass" src="star2.png"/>
-            <div>Time left:  <span id="time"></span> </div>
-            <div>Correct answers:  <span id="PokemonsNamedAmount"></span> </div>
-            
-            <div id="div_pokemon_content">
-                <div id="div_title">Who's that Pokémon?</div>
-                
-                <div id="div_pokemon_image">
-                    <img id="img_pokemon" />
-                </div>
-                
-                <div id="div_input">
-                    <input type="text" id="inputName" onkeyup="pokemonNameTextChanged()"> 
-                    <button type="button" id="skipButton" onclick="noIdeaWhatIsThisPokemon()">skip</button>
-                </div>
-            </div>
-            
-            <div id="fb-root"></div>
-
-        </div>
-    </div>
-</body>
-</html>
->>>>>>> origin/master
->>>>>>> origin/master
