@@ -1,7 +1,7 @@
 // JavaScript Document
 var number;
 var correctAnswers = 0;
-var timeInterval = 30;
+var timeInterval = 120;
 var isTimeRunning = false;
 var isGameOver = false;
 var lastString = "";
