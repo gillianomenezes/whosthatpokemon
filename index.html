@@ -1,68 +1,90 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script language="JavaScript" type="text/javascript" src="script.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Who's that pokemon</title>
-</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script language="JavaScript" type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Who is that pokemon</title>
+    </head>
 
-<body onload="changeImage()" bgcolor="#C1001F">   
-    
-	<div class="div_screen">
-            <div id="center">  
+    <body onload="changeImage()" bgcolor="#C1001F">
+
+        <div class="div_screen">
+            <div id="center">
+                
                 <!-- Background Images -->
-            	<img id="star1" class="star_image_animated_clockwise" src="images/star1.png"/>
+                <img id="star1" class="star_image_animated_clockwise" src="images/star1.png"/>
                 <img id="star2" class="star_image_animated_clockwise" src="images/star2.png"/>
-                
-                
+
+                <!-- Game -->
                 <div id="div_game">
-                    
+
                     <!-- Title -->
-                    <div id="div_title">WHO IS THAT POKÉMON?</div>    
-                    
-                    <!-- Pokemon Image -->            
+                    <div id="div_title">WHO IS THAT POKÉMON?</div>
+
+                    <!-- Pokemon Image -->
                     <div id="div_pokemon_image">
                         <img id="img_pokemon" />
                         <div id="div_close_sign">Close!</div>
                         <div id="div_pokemon_name" />
-                    </div>          
-                           
-                    <!-- Guess Input -->  
+                    </div>
+
+                    <!-- Guess Input -->
                     <div id="div_input">
-                        <input type="text" id="inputName" onkeyup="pokemonNameTextChanged()"> 
+                        <input type="text" id="inputName" onkeyup="pokemonNameTextChanged()">
                         <button type="button" id="skipButton" onclick="noIdeaWhatIsThisPokemon()">skip</button>
                     </div>
-                    
+
                     <!-- Already Guessed Bar -->
                     <div id="div_guessed_bar">
                         <div id="div_guessed_counter">0</div>
-                        
+
                         <div id="div_guessed_icons">
                             <ul id="list_images">
                             </ul>
                         </div>
-                        
+
                         <div id="div_guessed_timer">00:00</div>
                     </div>
+                </div>                
+            </div>
+            
+            <!-- Credits -->
+            <div id="div_credits">
+                Pokémon and all respective names are trademark & copyright of Nintendo.</br>
+                Images from <a href="http://pokemon.com">pokemon.com</a> and <a href="http://pkparaiso.com">pkparaiso.com</a>.
+            </div>
+            
+            <!-- Game Over Alert -->
+            <div id="div_alert">
+                <div id="div_alert_title">GAME OVER</div>
+                
+                <div id="div_alert_body">
+                    <a id="text_result">YOU GUESSED 720 POKÉMON!</a>
+                </div>
                     
-                    <!-- Credits -->
-                    <div id="div_credits">
-                        Pokémon and all respective names are trademark & copyright of Nintendo.</br>
-                        Images from <a href="http://pokemon.com">pokemon.com</a> and <a href="http://pkparaiso.com">pkparaiso.com</a>.
+                <div id="div_alert_share">
+                    <div class="share">
+                        <a>Share:</a>
+                        <div id="tweetBtn">
+                            <a class="twitter-share-button" href="https://twitter.com/share" data-text="Who is that pokemon?" data-url="http://whoisthatpokemon.com">Tweet</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </div>
                     </div>
                 </div>
-            </div>          
-    </div>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-78230855-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-</body>
+            </div>
+        </div>
+        
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-78230855-1', 'auto');
+        ga('send', 'pageview');
+        </script>
+    </body>
 </html>

@@ -1,7 +1,7 @@
 // JavaScript Document
 var number;
 var correctAnswers = 0;
-var timeInterval = 300;
+var timeInterval = 30;
 var isTimeRunning = false;
 var isGameOver = false;
 var lastString = "";
@@ -13,34 +13,27 @@ function changeImage()
     {
         previousNumbers = new Array();
     }
-    
-	do
+
+	  do
     {
-        number = Math.floor((Math.random() * pokemons.length) + 1);  
+        number = Math.floor((Math.random() * pokemons.length) + 1);
+        //number = Math.floor((Math.random() * 3) + 1);
     }
     while($.inArray(number, previousNumbers) != -1);
-        
+
     //alert(number);
     previousNumbers.push(number);
     numberText = zeroFill(number, 3);
 
     changebrightness(0);
 	document.getElementById("img_pokemon").src = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/" + numberText + ".png";
-    
+
     $( "#div_pokemon_name" ).fadeOut( 0 );
     //document.getElementById("div_pokemon_name").style.opacity = 0;
     document.getElementById("div_pokemon_name").textContent = pokemons[number - 1] + "!";
-    
-    document.getElementById("inputName").disabled = false;
-    document.getElementById("inputName").focus();    
-}
 
-function pauseStarAnimation()
-{
-    for( let i = 0 ; i < imgs.length ; i++)
-    {
-        imgs[i].style.webkitAnimationPlayState = 'paused';
-    }
+    document.getElementById("inputName").disabled = false;
+    document.getElementById("inputName").focus();
 }
 
 function zeroFill( number, width )
@@ -60,9 +53,9 @@ function pokemonNameTextChanged() {
     if (pokemonInputText != lastString) {
         lastString = pokemonInputText;
         var pokemonName = pokemons[number - 1].toLowerCase();
-                        
+
         //alert(number +  " " + pokemons[number - 1] + " " + pokemonName);
-                
+
         // If player guesses it right:
         //if(pokemonInputText == pokemonName)
         //alert(levDist(pokemonInputText, pokemonName));
@@ -70,50 +63,50 @@ function pokemonNameTextChanged() {
         if (distance > 0 && distance < 3)
         {
             $( "#div_close_sign" ).fadeIn( 0, function() {
-                $( "#div_close_sign" ).fadeOut( 250 );                  
+                $( "#div_close_sign" ).fadeOut( 250 );
             } );
         }
         else if (distance < 1)
         {
             // Shows pokémon
             changebrightness(100);
-            
+
             // Shows name of pokémon
             $( "#div_pokemon_name" ).fadeIn( 0, function() {
-                $( "#div_pokemon_name" ).fadeOut( 1000 );    
+                $( "#div_pokemon_name" ).fadeOut( 1000 );
             } );
-        
-            // Clears input 
+
+            // Clears input
             elementInput.value = "";
             elementInput.disabled = "disabled";
-                
+
             // Adds correct pokémon to guessed list
             addsImage(number);
-            
-            // Increases answer    
-            correctAnswers += 1;     
+
+            // Increases answer
+            correctAnswers += 1;
             document.getElementById('div_guessed_counter').textContent = correctAnswers;
-                        
+
             // Starts timer if not
-            if (isTimeRunning == false)
+            if (!isTimeRunning)
             {
-                isTimeRunning = true;
-                var display = document.getElementById('div_guessed_timer');
-                startTimer(timeInterval, display);
+                startGame();
             }
-            
+
             if (!isGameOver)
             {
                 // Waits for 1 second, then changes image
-                setTimeout(changeImage, 1000);  
+                setTimeout(changeImage, 1000);
             }
-        }    
+        }
     }
 }
 
-function toggleStarAnimation()
-{
-    $("#star1").attr("class", "star_image_animated");
+function startGame()
+{    
+    isTimeRunning = true;
+    var display = document.getElementById('div_guessed_timer');
+    startTimer(timeInterval, display);
 }
 
 function noIdeaWhatIsThisPokemon()
@@ -122,6 +115,11 @@ function noIdeaWhatIsThisPokemon()
     var edValue = document.getElementById("inputName");
     edValue.value = "";
     edValue.focus();
+    
+    if (!isTimeRunning)
+    {
+        startGame();
+    }
 }
 
 function addsImage(pokemonNumber)
@@ -131,12 +129,12 @@ function addsImage(pokemonNumber)
     img.alt   = pokemons[pokemonNumber - 1];
     img.title = pokemons[pokemonNumber - 1];
     img.height = 50;
-    
-    var newItem = document.createElement("li");       // Create a <li> node
+
+    var newItem = document.createElement("li");
     newItem.appendChild(img);
-    
-    var list = document.getElementById("list_images");    // Get the <ul> element to insert a new node
-    list.insertBefore(newItem, list.childNodes[0]); 
+
+    var list = document.getElementById("list_images");
+    list.insertBefore(newItem, list.childNodes[0]);
 }
 
 function startTimer(duration, display) {
@@ -146,7 +144,7 @@ function startTimer(duration, display) {
         minutes,
         seconds;
     function timer() {
-        // get the number of seconds that have elapsed since 
+        // get the number of seconds that have elapsed since
         // startTimer() was called
         diff = duration - (((Date.now() - start) / 1000) | 0);
         // does the same job as parseInt truncates the float
@@ -156,19 +154,19 @@ function startTimer(duration, display) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds; 
+        display.textContent = minutes + ":" + seconds;
 
         // Checks if time is over
         if (diff <= 0) {
-            timeElapsed();
-            clearInterval(intervalControl);            
-            
+            clearInterval(intervalControl);
+            ChangeTwitterPost();
+
             isGameOver = true;
-            gameOver();            
+            gameOver();
         }
-        
+
     };
-    
+
     timer();
     intervalControl = setInterval(timer, 1000);
 }
@@ -177,7 +175,18 @@ function gameOver()
 {
     if(isGameOver)
     {
+        document.getElementById('div_alert').style.display = 'block';
+        
+        document.getElementById("inputName").disabled = true;
+        document.getElementById("skipButton").disabled = true;
+        document.getElementById("text_result").textContent = "YOU GUESSED " + correctAnswers + " POKÉMON!";
+        
+        /*
+        * Do not clear this piece of code
+        */
+        
         //clear the pokemons answered list
+        /*
         var ul = document.getElementById('list_images');
         if (ul) {
           while (ul.firstChild) {
@@ -187,33 +196,48 @@ function gameOver()
 
         //sets the named correctly amount to zero
         document.getElementById("div_guessed_counter").textContent = "0";
-        
+
         correctAnswers = 0;
         timeInterval = 300;
         isTimeRunning = false;
         isGameOver = false;
         lastString = "";
         previousNumbers = new Array();
+        */
     }
-
-    changeImage();
+    
+    //changeImage();
 }
 
-function timeElapsed()
+function ChangeTwitterPost()
 {
-    if(correctAnswers > 1)
+    var tweetPost
+    var minutes = (timeInterval / 60) | 0;
+    var seconds = (timeInterval % 60) | 0;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    if(correctAnswers > 0)
     {
-        alert("Congratulations! You named correctly " + correctAnswers + " pokemons!");  
-    }
-    else if(correctAnswers == 1)
-    {
-        alert("You named correctly just one pokemon... Try again!");
+        tweetPost = "I correctly named " + correctAnswers + " Pokémon in just " + minutes + ":" + seconds +"! Can you beat me? #whoisthatpokemon";
     }
     else
     {
-        alert("Time is over and you didn't named any pokemon... Try again!");
+        tweetPost = "Well, I could not remember any of these guys. Can you name every 720 Pokémon?";
     }
+    
+    // Remove existing iframe
+    $('#tweetBtn iframe').remove();
+    // Generate new markup
+    var tweetBtn = $('<a></a>')
+        .addClass('twitter-share-button')
+        .attr('href', 'http://twitter.com/share')
+        .attr('data-url', 'http://whoisthatpokemon.com')
+        .attr('data-text', tweetPost);
+    $('#tweetBtn').append(tweetBtn);
+    twttr.widgets.load();
 }
+
 
 function changebrightness(value)
 {
@@ -273,11 +297,11 @@ function levDist (s, t) {
     return d[n][m];
 }
 
-window.onload = function () {    
+window.onload = function () {
     $( "#div_close_sign" ).fadeOut( 0 );
-        
+
     document.getElementById("inputName").focus();
-    
+
     document.getElementById('div_guessed_timer').textContent = "00:00";
     document.getElementById('div_guessed_counter').textContent = "0";
 };

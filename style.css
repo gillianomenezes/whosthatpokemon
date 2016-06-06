@@ -41,10 +41,10 @@
     text-align: center;
     
     width: 80%;
-    height: 100%;
+    height: 90%;
     
     position: absolute;
-    top: 0%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, 0%);
 }
@@ -78,7 +78,7 @@
     max-width:100%;
     max-height:100%;    
 	
-	width: 50%	
+	width: 50%;
 
 	-webkit-filter: brightness(0%);
     
@@ -191,7 +191,7 @@
     display: inline-block;
     text-align: center;
     
-    width: 80%;
+    width: 450px;
     height: 50px;
 }
 
@@ -241,8 +241,6 @@
 #list_images li
 {
     display: inline;
-    height: 50px;
-    width: 50px;
 }
 
 #div_guessed_timer
@@ -270,19 +268,98 @@
 {
     /*background-color: #FFF;*/
     
-    display: inline-block;  
-    
     font-family: Verdana;
     font-size: 8pt;
     text-align: center;
     color: #000000;
-    
+        
     position: fixed;
-    bottom: 5px;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    bottom: 0;
+    width: 100%;
+}
+
+#div_alert
+{
+    display: none;
+    background-color: #FFF;
+        
+	position: fixed;
+	top: 50%;
+	left: 50%;
+    
+    width: 300px;
+    height: 300px;
+    
+    transform: translate(-50%, -50%);
+}
+
+#div_alert_title
+{
+    background-color: #C1001F;
+    
+    position: static;
     
     width: 100%;
+    height: 75px;
+    
+    text-align: center;
+    vertical-align: middle;
+    line-height: 75px; 
+    
+    font-family: Impact;
+    font-size: 30pt;
+    color: #FFFF00;
+    
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;     
+}
+
+#div_alert_body
+{   
+    width: 100%;
+    height: 150px;
+    
+    position: static;
+    
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px; 
+    
+    font-family: Impact;
+    font-size: 18pt;
+    color: #FFFF00;
+    
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;   
+}
+
+#div_alert_share
+{
+    /*background-color: #00F;*/
+    
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    
+    width: 250px;
+    height: 75px;    
+    
+    font-family: Impact;
+    font-size: 20pt;
+    color: #FFFF00;
+    line-height: 40px; 
+    
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;   
 }
 
 @-webkit-keyframes rotate_clockwise 
